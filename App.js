@@ -83,7 +83,7 @@ function MessageStackScreen() {
           )
         }}
       />
-      {/* <MessageStack.Screen
+      <MessageStack.Screen
           name="Chat"
           component={Chat}
           options={{
@@ -101,7 +101,7 @@ function MessageStackScreen() {
               </View>
             )
           }}
-        /> */}
+        />
     </MessageStack.Navigator>
   );
 }
@@ -131,7 +131,7 @@ function ProfileStackScreen() {
           )
         }}
       />
-      {/* <ProfileStack.Screen
+      <ProfileStack.Screen
         name="Settings"
         component={Settings}
         options={{
@@ -145,7 +145,7 @@ function ProfileStackScreen() {
             fontFamily: 'Avenir-Bold',
           },
         }}
-      /> */}
+      />
     </ProfileStack.Navigator>
   );
 
@@ -170,8 +170,7 @@ export default function App() {
             } else if (route.name === 'Profile') {
               iconName = focused ? 'user' : 'user';
             }
-
-            // You can return any component that you like here!
+            
             return (
               <View style={{ padding: 20 }}>
                 <Feather name={iconName} size={27} color={color} />
