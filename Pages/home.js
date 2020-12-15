@@ -19,73 +19,69 @@ const [order, setOrder] = useState([
 
 
 
-export default class Home extends Component {
+export default function Home() {
 
-    render() {
-
-        return (
-            <View style={styles.container}>
-                <View style={styles.containerInner}>
+    return (
+        <View style={styles.container}>
+            <View style={styles.containerInner}>
 
 
-                    <View style={styles.card}>
-                        <Text style={{ color: 'white', fontFamily: 'Avenir-Bold' }} size={25}>Hello there,</Text>
-                        <Text style={{ color: 'white', fontFamily: 'Avenir-Bold', marginTop: 25, textAlign: 'right', }}>Your Balance</Text>
-                        <Text style={styles.balance} size={55}>400 L.E.</Text>
-                        <TouchableNativeFeedback>
-                            <View style={styles.charge}>
-                                <Text style={{ padding: 5, fontFamily: 'Avenir-Bold', fontSize: 18 }}>Charge</Text>
-                            </View>
-                        </TouchableNativeFeedback>
-                    </View>
+                <View style={styles.card}>
+                    <Text style={{ color: 'white', fontFamily: 'Avenir-Bold' }} size={25}>Hello there,</Text>
+                    <Text style={{ color: 'white', fontFamily: 'Avenir-Bold', marginTop: 25, textAlign: 'right', }}>Your Balance</Text>
+                    <Text style={styles.balance} size={55}>400 L.E.</Text>
+                    <TouchableNativeFeedback>
+                        <View style={styles.charge}>
+                            <Text style={{ padding: 5, fontFamily: 'Avenir-Bold', fontSize: 18 }}>Charge</Text>
+                        </View>
+                    </TouchableNativeFeedback>
+                </View>
 
-                    <View>
-                        <View style={styles.header}>
-                            <View style={{
-                                width: '125%',
-                                justifyContent: 'space-around',
-                                alignItems: 'center',
-                                flexDirection: 'row',
-                            }}>
-                                <Text style={{ color: 'white', fontFamily: 'Avenir-Bold', fontSize: 18, textAlign: 'left', }}>Your Orders</Text>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <AntDesign name="search1" size={24} color="white" style={{ paddingRight: 15, paddingLeft: 15 }} />
-                                    <MaterialCommunityIcons name="filter-variant" size={24} color="white" />
-                                </View>
+                <View>
+                    <View style={styles.header}>
+                        <View style={{
+                            width: '125%',
+                            justifyContent: 'space-around',
+                            alignItems: 'center',
+                            flexDirection: 'row',
+                        }}>
+                            <Text style={{ color: 'white', fontFamily: 'Avenir-Bold', fontSize: 18, textAlign: 'left', }}>Your Orders</Text>
+                            <View style={{ flexDirection: 'row' }}>
+                                <AntDesign name="search1" size={24} color="white" style={{ paddingRight: 15, paddingLeft: 15 }} />
+                                <MaterialCommunityIcons name="filter-variant" size={24} color="white" />
                             </View>
                         </View>
-                        <FlatList
-                            data={order}
-                            renderItems={({ details }) => (
+                    </View>
+                    <FlatList
+                        data={order}
+                        renderItems={({ details }) => (
 
-                                <View style={{ justifyContent: "center", }}>
+                            <View style={{ justifyContent: "center", }}>
 
-                                    <View>
-                                        <TouchableNativeFeedback>
-                                            <View style={styles.messgaes}>
-                                                <View style={{ borderRadius: 33 }}>
+                                <View>
+                                    <TouchableNativeFeedback>
+                                        <View style={styles.messgaes}>
+                                            <View style={{ borderRadius: 33 }}>
 
-                                                    <View style={{ width: '90%' }}>
-                                                        <Text style={{ color: 'white', fontSize: 20, fontFamily: 'Avenir-Bold' }}>{details.OrderCode}</Text>
-                                                    </View>
-                                                </View>
-                                                <View>
-                                                    <Entypo name="chevron-right" size={24} color="white" />
+                                                <View style={{ width: '90%' }}>
+                                                    <Text style={{ color: 'white', fontSize: 20, fontFamily: 'Avenir-Bold' }}>{details.OrderCode}</Text>
                                                 </View>
                                             </View>
+                                            <View>
+                                                <Entypo name="chevron-right" size={24} color="white" />
+                                            </View>
+                                        </View>
 
-                                        </TouchableNativeFeedback>
-                                    </View>
-
+                                    </TouchableNativeFeedback>
                                 </View>
-                            )}
-                        />
-                    </View>
+
+                            </View>
+                        )}
+                    />
                 </View>
             </View>
-        )
-
-    }
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
