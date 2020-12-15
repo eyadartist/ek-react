@@ -1,21 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Text, StyleSheet, View } from 'react-native'
 
-export default class Message extends Component {
-
-    render() {
-        if (!fontsLoaded) {
-            return <AppLoading />;
-        } else {
-            return (
-                <View style={styles.container}>
-                    <View style={styles.containerInner}>
-                        <Text style={{ color: 'white' }}> textInComponent </Text>
-                    </View>
-                </View>
-            )
-        }
-    }
+export default function Message() {
+    return (
+        <View style={styles.container}>
+            <View style={styles.containerInner}>
+                <Text style={{ color: 'white' }}> textInComponent </Text>
+            </View>
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
