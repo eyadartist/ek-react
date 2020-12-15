@@ -7,9 +7,7 @@ import { AntDesign, Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 
-export default class Profile extends Component {
-
-    render() {
+export default function Profile() {
 
         const [currentDate, setCurrentDate] = useState('');
 
@@ -127,8 +125,6 @@ export default class Profile extends Component {
                 </View>
             </View >
         )
-
-    }
 }
 
 const styles = StyleSheet.create({
